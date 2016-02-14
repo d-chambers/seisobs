@@ -1,0 +1,24 @@
+ 2002  411 1316 27.9 LE 58.202   6.203  0.0F BER  7 0.9 1.8LBER 2.0CBER        1
+ GAP=285        2.50      11.4    20.2  0.0  0.6308E+02 -0.1860E+05  0.6351E+04E
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:20020411131627 L   I
+ 2002-04-11-1316-30S.NNSN__011                                                 6
+ 2002 0411 1316      LE                      TIT                               1
+ 2002 0411 1316      LE                      TIT                             E13
+ CHARGE(T):   42.600 TIT    Titania                                          EC3
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ KMY  SZ EP       1316 47.36  103                         90   -0.6110  125 334 
+ KMY  SZ ES       1317  4.03                              90    1.1810  125 334 
+ BLS5 SZ EP       1316 49.58   88                         90   -0.3510  137   6 
+ BLS5 SZ ES       1317  6.82                              90    0.5610  137   6 
+ ODD1 SZ EP       1316 57.38   92                         50    0.1610  192   7 
+ ODD1 SZ ES       1317 18.77                              50   -0.1810  192   7 
+ ODD1 SZ  IAML    1317 22.68        15.4 0.16                           192   7 
+ EGD  SZ EP       1317  2.92                              50    0.1510  237 347 
+ KONO BZ EP       1317  3.55                              50   -1.2610  253  49 
+ KONO BZ ES       1317 33.39                              50    1.2510  253  49 
+ KONO BZ  AMML    1317 35.75        37.0 0.55                           253  49 
+ SUE  SZ EP       1317 13.69                              50   -0.4110  328 346 
+ HYA  SZ EP       1317 15.57   99                         50    1.2510  330 360 
+ HYA  SZ ESG      1317 58.79                              90   -1.7410  330 360 
+ HYA  SZ  AMML    1317 58.96         2.8 0.22                           330 360 
+                                                                                

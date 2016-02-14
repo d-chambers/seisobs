@@ -1,0 +1,45 @@
+ 1996  6 7 1325 29.2 L  59.846   5.130 12.0F TES 12 0.6 1.9LTES 2.2CTES 2.0LNAO1
+ GAP=177        2.78       4.5    12.8  0.0  0.2239E+02  0.6258E+03 -0.2817E+03E
+ 1996  6 7 1325 29.1 L                       BER        2.0WBER                1
+       8.3      41.0      74.7     1                                           F
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:19960607132529 L   I
+ 1996-06-07-1324-51S.TEST__009                                                 6
+ 1996 0607 1325 30.5 L  59.763   5.396 29.2  NAO  2 1.0                 2.0LNAO1
+     535  SOUTHERN NORWAY                                                      3
+ depth fixed to 12 km, rms lowest with near station (less than 110 km) location3
+ fault plane solution ok within 10 deg                                         3
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ EGD  SZ IP     C 1325 35.95   93                         70   -1.1310 47.7   6 
+ EGD  SZ ES       1325 42.03                              70   -0.8910 47.7   6 
+ BER  SZ IP     C 1325 38.12   55                         70   -0.9810 61.0  11 
+ BER  SZ ES       1325 45.44                              70   -0.9910 61.0  11 
+ BER  SZ  IAML    1325 46.71        31.7  0.2                          61.0  11 
+ KMY  SZ IP     C 1325 45.26   62                         70   -0.3310 70.9 175 
+ KMY  SZ ES       1325 48.74                              70   -0.3010 70.9 175 
+ KMY  SZ  IAML    1325 48.92        83.6  0.2                          70.9 175 
+ ASK  SZ EP     D 1325 39.59   68                         70   -1.0310 71.1   3 
+ ASK  SZ ES       1325 48.07                              70   -1.0210 71.1   3 
+ ASK  SZ  IAML    1325 50.90       111.0  0.3                          71.1   3 
+ ODD1 SZ IP     D 1325 44.30   95                         70    1.6510 84.2  84 
+ ODD1 SZ ES       1325 54.03                              70    1.4210 84.2  84 
+ ODD1 SZ  IAML    1325 57.31        42.3  0.1                          84.2  84 
+ BLS5 SZ IP     D 1325 42.91  112                         70   -0.3610 88.4 122 
+ BLS5 SZ ES       1325 53.38                              70   -0.3210 88.4 122 
+ SUE  SZ IP     C 1325 50.04  101                         50   -0.3110  136 352 
+ SUE  SZ EPG      1325 50.92                              95   -0.3610  136 352 
+ SUE  SZ ES       1326  6.81                              50    0.8110  136 352 
+ SUE  AZ E        1326  7.29                                            136 352 
+ SUE  SZ  IAML    1326  8.14        45.6  0.1                           136 352 
+ HYA  SZ EP     C 1325 52.53  115                         50   -0.5110  158  21 
+ HYA  SZ I        1325 53.57                                            158  21 
+ HYA  SE ES       1326 12.06                              50    1.3610  158  21 
+ FOO  SZ EP     D 1325 58.85  114                         50    1.2010  195 359 
+ FOO  SN ES       1326 19.76                              50    1.0410  195 359 
+ FOO  SZ  IAML    1326 22.72        26.7  0.3                           195 359 
+ MOL  SZ EP       1326 18.31                              50    3.8910  330  22 
+ NRA0 SZ  Pn      1326 19.09                  256.9  6.9  50  0-0.0510  368  72 
+ NRA0 SZ  Pg      1326 27.94                  253.0  7.3  92 -3-0.6410  368  72 
+ NRA0 SZ  Lg      1327 10.54                  266.6  4.1  91  9-0.8910  368  72 
+ HFS  SZ  Pn      1326 32.36                  270.2  7.4  50  0-0.5410  479  82 
+ HFS  SZ  Lg      1327 41.49                  263.1  3.5   0 -6-0.7010  479  82 
+                                                                                

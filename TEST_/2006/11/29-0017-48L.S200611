@@ -1,0 +1,24 @@
+ 2006 1129 0017 48.3 L  66.423  13.241  9.0  TES  3 0.1-0.4LTES 0.4CTES 0.5WBER1
+ 2006 1129 0017 48.3 L                       TES        0.5WTES                1
+ SPEC AVERAGE  MO  9.9 ST0.058 OM -0.8 f012.28 R0.1064 AL 3.75 WI  0.9 MW  0.5 3
+ SPEC SD       MO  0.4 ST0.051 OM  0.0 f0 2.31 R0.0200 AL      WI      MW  0.2 3
+ GAP=182        0.33       1.0     3.6  3.5  0.1384E+01  0.8957E+00  0.5310E+00E
+ SPEC STOKS  Z MO 10.2 ST0.110 OM -0.8 f014.59 R0.0864 AL 4.02 WI  0.7 MW  0.7 3
+ SPEC STOKS  Z T 01750 K 0.000 GD 13.5 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC STOKS  Z MO  9.5 ST0.007 OM -0.8 f0 9.97 R0.1264 AL 3.48 WI  1.1 MW  0.3 3
+ SPEC STOKS  Z T 01752 K 0.000 GD 13.5 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:20061129001748     I
+ 2006-11-29-0017-11S.STOK1_003                                                 6
+ 2006-11-29-0017-12S.STOK2_003                                                 6
+ 2006-11-29-0017-13S.STOK__003                                                 6
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ STOK1SZ EP        017 50.34   21                        132   -0.1010 10.1 328 
+ STOK1SZ  IAML     017 50.58         2.1 0.20                          10.1 328 
+ STOK1SN ES        017 52.12                             132    0.0610 10.1 328 
+ STOK2SZ IP        017 50.63   20                        129    0.0710 11.1 150 
+ STOK2SN ES        017 52.23                             129   -0.0410 11.1 150 
+ STOK2SZ  IAML     017 52.75         1.6 0.14                          11.1 150 
+ STOK SZ IP        017 50.99                             123    0.0310 14.1 225 
+ STOK SN ES        017 52.94                             123   -0.0210 14.1 225 
+ STOK SZ  IAML     017 53.19         1.4 0.10                          14.1 225 
+                                                                                

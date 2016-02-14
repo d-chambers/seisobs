@@ -1,0 +1,19 @@
+ 1996  625  337 31.0 L  61.690   3.261 15.0  TES 31 2.0 3.3LTES 3.0CTES 3.2LNAO1
+ SPEC HYA S  Z MO  0.0 ST0.000 OM 3.02 f0 4.61 R0.2567 AL 0.00 WI 25.7 MW  0.0 3
+ SPEC HYA S  Z T 33811 K 0.020 GD    0 VS 3.20 DE 2.60 Q0400.0 QA 0.70 Q1 1.00 3
+ GAP=153       21.23      35.9    89.8 65.2 -0.6139E+03  0.8616E+03  0.3555E+00E
+ 1996  625  337 31.9 L                       BER        3.1WBER                1
+ 1996-06-25-0337-20S.NNSN__039                                                 6
+     327.2      62.0     -11.2     0                                           3
+ OLDACT:SPL 08-10-02 10:19 OP:jh   STATUS:               ID:19960625033731     3
+ ACTION:DPH 15-03-26 11:08 OP:sb   STATUS:               ID:19960625033731     I
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ EGD  SZ IP        337 58.74                                                    
+ FOO  SZ IP        337 46.06                                                    
+ FOO  SZ ES        337 56.00                                                    
+ KMY  SZ IP        338 11.86                                                    
+ KMY  SZ ES        338 41.30                                                    
+ HYA  SZ IP        337 55.42  219                                               
+ HYA  SZ ES        338 14.18                                                    
+ HYA  SZ  IAML     338 19.64      1119.5 0.60                                   
+                                                                                

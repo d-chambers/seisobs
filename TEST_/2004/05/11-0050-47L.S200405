@@ -1,0 +1,81 @@
+ 2004  511 0050 47.7 L  60.017   5.305  7.0F TES 16 0.7 1.8LTES 1.7CTES 2.3LNAO1
+ 2004  511 0050 47.7 L                       TES        2.0WTES                1
+ SPEC AVERAGE  MO 12.1 ST  1.3 OM  1.0 f0 7.75 R0.1678 AL 1.59 WI 11.0 MW  2.0 3
+ SPEC SD       MO  0.2 ST0.686 OM  0.4 f0 1.33 R0.0302 AL      WI      MW  0.2 3
+ GAP=164        2.37       2.8     9.0  0.0  0.9306E+01  0.0000E+00  0.0000E+00E
+ 2004  511 0050 47.7 L                       BER        2.0WBER                1
+ SPEC SNARS  Z MO 12.3 ST0.920 OM  1.0 f0 5.79 R0.2176 AL 2.39 WI  7.7 MW  2.2 3
+ SPEC SNARS  Z T 05145 K 0.000 GD  146 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC STAVS  Z MO 11.9 ST0.834 OM  0.7 f0 7.75 R0.1626 AL 0.93 WI  6.1 MW  1.9 3
+ SPEC STAVS  Z T 05120 K 0.000 GD  110 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC BLS5S  Z MO 12.0 ST0.550 OM  0.9 f0 6.14 R0.2052 AL 1.65 WI 12.3 MW  2.0 3
+ SPEC BLS5S  Z T 05112 K 0.000 GD 92.9 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC SUE S  Z MO 12.0 ST  1.7 OM  0.8 f0 9.17 R0.1374 AL 2.01 WI 13.0 MW  1.9 3
+ SPEC SUE S  Z T 05118 K 0.000 GD  109 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC KMY S  Z MO 11.6 ST0.855 OM  0.5 f0 9.77 R0.1290 AL 1.22 WI 11.3 MW  1.7 3
+ SPEC KMY S  Z T 05111 K 0.000 GD 90.0 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC HYA S  Z MO 12.1 ST0.674 OM  0.9 f0 6.08 R0.2072 AL 1.55 WI 19.4 MW  2.0 3
+ SPEC HYA S  Z T 05126 K 0.000 GD  117 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC FOO S  Z MO 11.8 ST0.912 OM  0.5 f0 8.76 R0.1438 AL 1.88 WI 16.6 MW  1.8 3
+ SPEC FOO S  Z T 05134 K 0.000 GD  133 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC ASK S  Z MO 12.5 ST  2.9 OM  1.6 f0 7.50 R0.1680 AL 1.92 WI  7.4 MW  2.3 3
+ SPEC ASK S  Z T 051 0 K 0.000 GD 52.7 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC EGD S  Z MO 12.2 ST  1.7 OM  1.6 f0 7.66 R0.1645 AL 0.90 WI  7.9 MW  2.1 3
+ SPEC EGD S  Z T 05055 K 0.000 GD 29.4 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC BER S  Z MO 12.1 ST  1.9 OM  1.3 f0 8.85 R0.1424 AL 1.40 WI  7.9 MW  2.0 3
+ SPEC BER S  Z T 05058 K 0.000 GD 41.5 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:20040511005047 L   I
+ Using local model indicates depth on 7km, fixed, alk                          3
+ 2004-05-11-0050-42S.NSN___013                                                 6
+                            3 MM                                        BER    2
+ One person from Rostøy, Austevoll felt the earthquake, alk                    3
+ 2004 0511 0050 46.4 L  59.902   5.488  6.1  NAO  2 1.2                 2.3LNAO1
+                 8.1     0.0     0.4   41.8                                    5
+     535  SOUTHERN NORWAY                                                      3
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ EGD  SZ IP     C  050 52.46                             104   -0.0210 28.6 351 
+ EGD  SZ ES        050 56.19                             104    0.1910 28.6 351 
+ EGD  SZ  IAML     050 57.07        85.2 0.58                          28.6 351 
+ BER  SZ IP     C  050 54.36   42                        100   -0.0610 40.9   2 
+ BER  SZ ES        050 59.71                             100    0.3410 40.9   2 
+ BER  SZ  IAML     050 59.83        49.4 0.26                          40.9   2 
+ RUND SZ IP     C  050 55.03   63                        100    0.0610 44.3   4 
+ RUND SZ  IAML     051  3.62        86.6 0.35                          44.3   4 
+ ASK  SZ IP     C  050 55.80                              98   -0.4310 52.2 353 
+ ASK  SZ ES        051  2.09                              98   -0.4310 52.2 353 
+ ASK  SZ  IAML     051  2.38        90.3 0.22                          52.2 353 
+ ODD1 SZ IP     D  050 59.42   53                         96   -0.4410 74.8  98 
+ ODD1 SZ ES        051  8.98                              96    0.1410 74.8  98 
+ ODD1 SZ  IAML     051 11.95        53.0 0.28                          74.8  98 
+ KMY  SZ EP        051  2.05   57                         94   -0.2010 89.7 182 
+ KMY  SZ ES        051 12.71                              94   -0.2810 89.7 182 
+ KMY  SZ  IAML     051 14.64        22.7 0.32                          89.7 182 
+ BLS5 SZ IP     D  051  3.50   54                         95    0.7910 92.6 135 
+ BLS5 SZ ES        051 14.83                              95    1.0210 92.6 135 
+ BLS5 SZ  IAML     051 17.53        37.1 0.33                          92.6 135 
+ SUE  SZ EP        051  6.06   66                         70   -0.7310  120 346 
+ SUE  SN ES        051 20.08                              70   -0.8210  120 346 
+ SUE  SZ  IAML     051 21.14        41.3 0.38                           120 346 
+ STAV SZ IP     C  051  6.74   53                         70   -0.5110  123 169 
+ STAV SZ ES        051 21.36                              70   -0.3410  123 169 
+ STAV SZ  IAML     051 22.70        30.1 0.19                           123 169 
+ HYA  SZ EP        051  9.68   81                         70    0.2810  137  20 
+ HYA  SZ ES        051 26.96                              70    1.5210  137  20 
+ HYA  SZ  IAML     051 29.05        20.4 0.79                           137  20 
+ FOO  SZ EP        051 14.41   68                         50    0.0110  177 356 
+ FOO  SZ ES        051 34.88                              50    0.7410  177 356 
+ FOO  SZ  IAML     051 36.32        17.3 0.11                           177 356 
+ SNARTSZ EP        051 21.44   66                         50    2.1010  216 149 
+ SNARTSZ ESg       051 47.24                              92   -1.2410  216 149 
+ SNARTSZ  IAML     051 47.26        52.7 0.36                           216 149 
+ KONO BZ EP        051 23.39                              50    0.5910  244  98 
+ KONO BN ES        051 50.08                              50    1.3210  244  98 
+ MOL  SZ EP        051 31.90                              50    1.0810  309  22 
+ MOL  SZ  IAML     052 18.76         4.3 0.49                           309  22 
+ NB2  SZ  Pn      0051 35.40                              50    0.1710  344  68 
+ NB2  SZ  Pg      0051 40.27                              91   -2.9210  344  68 
+ NB2  SZ  Lg      0052 20.95                               0   -2.2810  344  68 
+ HFS  SZ  Pn      0051 49.90                  266.0  8.0  50 -5-0.5810  467  85 
+ HFS  SZ  Sn      0052 37.12                  267.8  4.9  50 -3 0.2010  467  85 
+ HFS  SZ  Lg      0052 58.17                  274.9  3.7   0  3 0.7310  467  85 
+                                                                                

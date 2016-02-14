@@ -1,0 +1,19 @@
+ 1998  812 1410 25.1cL  36.755-121.462  8.0FFBGS  4 0.3 5.2W                   1
+   29.1500   61.9800  -11.1700     0  0.0   0.0        1              FOCMEC   F
+ GAP=194        0.62       4.3     6.7  0.0  0.1727E+02  0.0000E+00  0.0000E+00E
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:19980812141000     I
+  Date: 1998/ 8/12   Centroid Time: 14:10:28.5 GMT                             3
+  Lat=  36.61  Lon=-121.30                                                     3
+  Depth= 15.0   Half duration= 1.0                                             3
+  Centroid time minus hypocenter time:  3.4                                    3
+  Moment Tensor: Expo=23  0.384 -7.143 6.758 -0.561 0.325 0.684                3
+  Mw = 5.2    mb = 4.8    Ms = 5.0   Scalar Moment = 7.01e+23                  3
+  Fault plane:  strike=48    dip=85   slip=-1                                  3
+  Fault plane:  strike=138    dip=89   slip=-175                               3
+ 1998-08-12-1410-00S.OBS___012                                                 6
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ PKD  BZ EP     D 1410 45.03                              67    0.0410  122 137 
+ CMB  BZ EP     D 1410 51.84                              54   -0.0810  171  34 
+ KCC  BZ EP     C 1410 56.16                              54    0.4710  201  71 
+ BKS  BZ EP     D 1410 47.35                              67   -0.4310  142 331 
+                                                                                

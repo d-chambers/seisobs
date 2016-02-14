@@ -1,0 +1,117 @@
+ 1999  529 0031 43.6 L  62.201   4.587 15.0F TES 32 0.7 3.9LTES 3.2CTES 3.8LNAO1
+ 1999  529 0031 43.6 L                       TES        3.3WTES                1
+ SPEC AVERAGE  MO 14.0 ST 27.7 OM  1.7 f0 4.28 R0.3118 AL 2.84 WI  9.9 MW  3.3 3
+ SPEC SD       MO  0.4 ST 39.1 OM  0.9 f0 1.07 R0.0721 AL      WI      MW  0.2 3
+ GAP=152        3.03       4.0    12.7  0.0 -0.1627E+02  0.0000E+00  0.0000E+00E
+ 1999  529 0031 43.6 L                       BER        3.3WBER                1
+ SPEC MOR8S  Z MO 13.6 ST  7.9 OM  0.9 f0 4.52 R0.2788 AL 3.41 WI  5.6 MW  3.0 3
+ SPEC MOR8S  Z T 03310 K 0.000 GD  651 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC TRONS  N MO 13.9 ST 15.8 OM  1.5 f0 4.52 R0.2788 AL 2.55 WI  6.6 MW  3.2 3
+ SPEC TRONS  N T 03233 K 0.000 GD  329 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC TRO S  Z MO 13.8 ST  4.2 OM  0.9 f0 3.13 R0.4026 AL 2.23 WI 11.0 MW  3.1 3
+ SPEC TRO S  Z T 03356 K 0.000 GD 1050 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC NSS S  Z MO 13.7 ST  8.5 OM  1.2 f0 4.17 R0.3022 AL 2.95 WI 11.5 MW  3.1 3
+ SPEC NSS S  Z T 03246 K 0.000 GD  451 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC LOF S  Z MO 13.7 ST 10.8 OM  0.9 f0 4.72 R0.2669 AL 3.36 WI  5.5 MW  3.1 3
+ SPEC LOF S  Z T 03322 K 0.000 GD  782 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC EGD S  Z MO 14.3 ST129.7 OM  2.1 f0 6.59 R0.1912 AL 3.87 WI 13.6 MW  3.5 3
+ SPEC EGD S  Z T 03212 K 0.000 GD  218 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC RUNDB  Z MO 14.2 ST 17.5 OM  2.9 f0 3.63 R0.3471 AL 2.21 WI 13.9 MW  3.4 3
+ SPEC RUNDB  Z T 03230 K 0.000 GD  142 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC ODD1S  Z MO 14.7 ST 27.5 OM  3.3 f0 2.95 R0.4271 AL 2.16 WI 11.3 MW  3.7 3
+ SPEC ODD1S  Z T 03254 K 0.000 GD  166 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:19990529003143 L   I
+ Using only nearest stations - rmsdep give zero depth , Depth fixed to 15km    3
+ Not fossible to foc.mec - too many solutions                                  3
+     197.4      72.2     128.9                                               B F
+ Fps from Hicks, E. et al: Stress inversion of earthquake focal mechanism      3
+ from onshore and offshore Norway, Norsk Geologisk Tidsskrift, 80, 235-250.    3
+ 20/9 2002, mbs.                                                               3
+ 1999-05-29-0031-43.MACRO                                                 MACRO3
+ 1999-05-29-0030-58S.NSN___056                                                 6
+                            4 MM                                        BER    2
+ 1999 0529 0031 43.9 L  62.266   5.100  8.3  NAO  8 1.9                 3.8LNAO1
+     535  SOUTHERN NORWAY                                                      3
+ 1999 0529  031 41.7 L 62.2813  4.5830  7.1 HBGS        4.1LBGS                1
+ FELT NORWEGIAN COAST      360KM NORTHWEST OF THE SHETLAND ISLANDS             3
+ 6.20  0.00/ 6.50 12.00/ 7.10 23.00/ 8.05 31.00/                               9
+ 741.155 1395.311 D D*D  14 80 285 1 0.38  5.3  3.0                            8
+  20. 400. 550. 1.73  3  0.500                                                 A
+ 223      15.00 KM 10.00 KM  0.25 ML                                          E3
+ BGS stations SAN and WAL were swapped, corrected sep 2000, lo                 3
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ FOO  SZ IP     C  031 54.40   77                         94   -0.7410 71.3 160 
+ FOO  SZ ES        032  2.29                              94   -1.3510 71.3 160 
+ FOO  SZ  IAML     032  3.35     12548.3  0.1                          71.3 160 
+ SUE  SZ IP     C  032  2.93  175                         55   -0.5410  128 176 
+ SUE  SN ES        032 19.55                              55    1.4210  128 176 
+ SUE  SZ ES        032 19.95                                            128 176 
+ SUE  SZ  IAML     032 23.96      2333.9  0.3                           128 176 
+ HYA  SZ IP     C  032  5.32   62                         55   -0.0510  143 143 
+ HYA  SZ ES        032 21.89                              55    0.4510  143 143 
+ HYA  SZ  IAML     032 23.41     11324.5  0.2                           143 143 
+ MOL  SZ EP        032  7.01  237                         55   -0.3010  159  74 
+ ASK  SZ IP     C  032 12.16  191                         55    0.4410  194 170 
+ ASK  SZ ES        032 32.64                              55    0.1510  194 170 
+ RUND BZ IP   9 C  032 10.38  154                         55   -2.54 0  203 168 
+ RUND BZ ES        032 33.23                                    1.1910  203 168 
+ RUND BZ  IAML     032 37.26      1370.2  0.3                           203 168 
+ BER  SZ IP     C  032 13.50  185                         55    0.2710  206 168 
+ BER  SZ ES        032 36.81                              55    1.6810  206 168 
+ EGD  SZ IP     C  032 14.91  157                         55    0.2710  218 171 
+ EGD  SZ ESG       032 43.34                              91    1.1310  218 171 
+ EGD  SZ  IAML     032 47.07      1127.2  0.6                           218 171 
+ ODD1 SZ IP     C  032 20.91  239                         55   -1.2610  278 156 
+ ODD1 SN ES        032 50.76                              55    0.0810  278 156 
+ ODD1 SZ ESG       032 55.98                              91   -2.1310  278 156 
+ ODD1 SZ  IAML     032 58.41      2970.3  0.2                           278 156 
+ BLS5 SZ IP     C  032 28.43  305                         55    0.3210  326 161 
+ BLS5 SZ ES        033  2.21                              55    1.1910  326 161 
+ BLS5 SZ  IAML     033 15.26      1069.1  0.5                           326 161 
+ TRON SN EPG       032 33.57  289                         91   -0.6110  329  62 
+ TRON SN ES   4    032 54.02                              55   -7.64 0  329  62 
+ KMY  SZ IP     C  032 28.64  158                         55   -0.5610  335 174 
+ KMY  SZ ES        033  2.74                              55   -0.1810  335 174 
+ KMY  SZ  IAML     033 19.58       511.2  0.2                           335 174 
+ LRW  SZ EP   2   0032 35.57                              55    0.01 5  386 236 
+ LRW  SN ES   2   0033 13.82                              55   -0.15 5  386 236 
+ KONO BZ EP        032 35.69                              55   -0.7510  393 134 
+ KONO BZ ES        033 15.71                              55    0.2010  393 134 
+ NRA0 SZ  Pn      0032 37.21                  307.9  9.7  55 11-0.7010  405 111 
+ NRA0 SZ  Pg      0032 43.56                  298.0  6.3  90  1-2.1110  405 111 
+ NRA0 SZ  Sn      0033 17.81                  303.7  6.1  55  7-0.2610  405 111 
+ NRA0 SZ  Lg      0033 34.76                  298.0  3.4   0  1-1.3410  405 111 
+ NSS  SZ EP        032 43.74  291                         53    0.2310  451  52 
+ NSS  SN ES        033 30.28                              53    2.4710  451  52 
+ NSS  SZ  IAML     033 48.43       544.1  0.4                           451  52 
+ OST  SZ EP   2   0032 52.12                              53    0.02 5  522 232 
+ OWE  SZ EP   2   0032 52.16                              53   -0.24 5  524 236 
+ HFS  SZ  Pn      0032 54.18                  302.1  8.2  55  3-0.6510  541 111 
+ HFS  SZ  Sn      0033 49.75                  308.2  4.4  55  9 2.2510  541 111 
+ HFS  SZ  Lg      0034 13.60                  307.0  3.5   0  8-0.3210  541 111 
+ OHO  SZ EP   2   0032 57.19                              53   -0.78 5  570 232 
+ OBR  SZ EP   2   0032 59.20                              53   -0.45 5  584 230 
+ ORE  SZ EP   2   0033  3.15                              53   -0.09 5  614 232 
+ MOR8 SZ EP        033 10.38  348                         53    2.6010  651  43 
+ MOR8 SZ ES   3    034 19.03                              53    8.99 2  651  43 
+ MOR8 SZ  IAML     034 52.68       181.7  0.8                           651  43 
+ EDR  SZ EP   2   0033 14.70                              51   -0.42 5  712 218 
+ LOF  SZ EP   4    033 20.65  310                         51   -2.61 0  782  28 
+ LOF  SZ ES        034 35.96                              51   -1.0110  782  28 
+ LOF  SZ  IAML     034 42.51        43.1  0.3                           782  28 
+ TRO  SZ EP        033 56.05                              51    1.2310 1050  32 
+ FIA0 SZ  Pn      0034 05.72                  282.5 10.1  55  0-2.3310 1131  85 
+ FIA0 SZ  Sn      0035 54.37                  279.7  6.2  55 -3-0.5310 1131  85 
+ FIA0 SZ  Lg      0037 00.52                  297.2  5.2   0 14 2.8410 1131  85 
+ ARA0 SZ  P       0034 19.11                  230.1  8.3  51 -8 1.17 9 1246  40 
+ ARA0 SZ  Sn      0036 16.86                  237.8  5.0  55 -1-3.07 9 1246  40 
+ ARA0 SZ  Lg      0037 29.64                  238.1  3.9   0  0-0.15 9 1246  40 
+ APA0 SZ  Pn  4   0034 44.13                  267.4 11.0  55  8-4.48 0 1457  53 
+ APA0 SZ  Sn  4   0037 00.85                  249.2  3.5  55 -9-4.64 0 1457  53 
+ GEC2 SZ  P   4   0035 02.25                  353.8  8.3  51 11 3.74 0 1590 155 
+ SPA0 SZ  P   4   0035 33.78                  175.5  8.7  51-23 7.24 0 1829   9 
+ MLA  SZ EP   2   0033  3.31                              51   -99.9 0 6149 339 
+ WAL  SZ IP   1 D 0032 36.59                              51   -99.9 0 6756 318 
+ YEL  SZ IP   1 D 0032 31.24                              51   -99.9 0 7090 322 
+ SAN  SZ EP   2   0032 36.52                              51   -99.9 012505 241 
+                                                                                

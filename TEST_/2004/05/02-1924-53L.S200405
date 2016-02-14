@@ -1,0 +1,95 @@
+ 2004  5 2 1924 53.9 L  59.893   6.271  5.0F TES 16 0.9 1.5LTES 1.3CTES 2.0LNAO1
+ 2004  5 2 1924 53.9 L                       TES        1.6WTES                1
+ SPEC AVERAGE  MO 11.6 ST0.912 OM  0.5 f0 9.81 R0.1504 AL 2.38 WI  8.5 MW  1.6 3
+ SPEC SD       MO  0.2 ST0.712 OM  0.2 f0 3.66 R0.0613 AL      WI      MW  0.1 3
+ GAP= 89        2.96       4.1     6.7  0.0  0.2657E+01  0.0000E+00  0.0000E+00E
+ 2004  5 2 1924 53.8 L*                      BER        1.6WBER                1
+ SPEC ODD1S  Z MO 11.3 ST  1.3 OM  0.8 f014.63 R0.0861 AL 5.86 WI  1.1 MW  1.5 3
+ SPEC ODD1S  Z T192459 K 0.000 GD 20.7 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC SUE S  Z MO 11.6 ST0.697 OM  0.3 f0 9.56 R0.1318 AL 1.41 WI  8.4 MW  1.7 3
+ SPEC SUE S  Z T192534 K 0.000 GD  124 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC ASK S  Z MO 11.6 ST  2.3 OM  0.5 f013.63 R0.0924 AL 2.87 WI  7.9 MW  1.7 3
+ SPEC ASK S  Z T192516 K 0.000 GD 88.9 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC EGD S  Z MO 11.4 ST  1.6 OM  0.4 f014.07 R0.0896 AL 2.57 WI  9.1 MW  1.6 3
+ SPEC EGD S  Z T192511 K 0.000 GD 72.0 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC SNARS  Z MO 11.9 ST0.430 OM  0.6 f0 6.29 R0.2003 AL 2.34 WI  9.3 MW  1.9 3
+ SPEC SNARS  Z T192540 K 0.000 GD  134 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC RUNDS  Z MO 11.9 ST0.371 OM  0.8 f0 6.19 R0.2036 AL 1.31 WI 11.6 MW  1.8 3
+ SPEC RUNDS  Z T192513 K 0.000 GD 76.9 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC BLS5S  Z MO 11.4 ST0.059 OM  0.5 f0 4.77 R0.2642 AL 1.26 WI 10.7 MW  1.5 3
+ SPEC BLS5S  Z T1925 7 K 0.000 GD 53.6 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC KMY S  Z MO 11.4 ST0.496 OM  0.3 f0 9.31 R0.1353 AL 1.42 WI 10.0 MW  1.6 3
+ SPEC KMY S  Z T192517 K 0.000 GD 95.6 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ Depth fixed at 5 km using local model and nearest stations. mbs.              3
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:20040502192453 L   I
+ 2004-05-02-1924-28S.NSN___013                                                 6
+                            3 MM                                        BER    2
+ felt aakrafjorden near markhus                                                3
+ info  from haugesund avis, jon aadland 93 24 56 45                            3
+ 2004 0502 1924 52.7 L  59.644   6.619       NAO  5 0.6                 2.0LNAO1
+                 2.5     0.1     0.2   -1.0                                    5
+     535  SOUTHERN NORWAY                                                      3
+ SYNT: MODEL--:     THICK        VP        VS      DENS        QP        QS    3
+ SYNT: MODEL--:    12.000     6.200     3.563     2.600     0.000     0.000    3
+ SYNT: MODEL--:    11.000     6.600     3.793     2.800     0.000     0.000    3
+ SYNT: MODEL--:     8.000     7.100     4.080     3.000     0.000     0.000 B  3
+ SYNT: MODEL--:    19.000     8.050     4.626     3.200     0.000     0.000 N  3
+ SYNT: MODEL--:    30.000     8.250     4.741     3.400     0.000     0.000    3
+ SYNT: MODEL--:    50.000     8.500     4.885     3.600     0.000     0.000    3
+ SYNT: ST-D-RK:       0.0      45.0      90.0                                  3
+ SYNT: DEPTH--:       5.0                                                      3
+ SYNT: NPOINTS:       256                                                      3
+ SYNT: TIMES--:     TOTAL    60.000   INITIAL     0.000  SY-TRACE    60.000    3
+ SYNT: BOUPAR-:     300.0       600     0.001                                  3
+ SYNT: PHASES-:        Pg        Sg       PmP       SmS       SmP              3
+ SYNT: DT-Tsou:     0.050      .100                                            3
+ SYNT: REDVELO:    8.0000                                                      3
+ SYNT: COMPON-:    RADIAL                                                      3
+ SYNT: STAT-AT:  no                                                            3
+ SYNT: NSTAT--:         1------------------------------------------------------3
+ SYNT: NEW STAT:---------------------------------------------------------------3
+ SYNT: STATION: KMY  S  Z  DISTANC:      96.2                                  3
+ SYNT: STATION: KMY        AZIMUTH:     218.0 BAZIMUTH:      36.7              3
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ ODD1 SZ IP   9 D 1924 56.95   23                        106   -0.30 0 20.1  84 
+ ODD1 SZ ES       1925  0.04                             9.2    0.6010 20.1  84 
+ ODD1 SZ  IAML    1925  0.25        87.1 0.28                          20.1  84 
+ BLS5 SZ IP     C 1925  3.31   44                         96    0.7610 53.4 169 
+ BLS5 SZ ES       1925  9.18                              96    0.2210 53.4 169 
+ BLS5 SZ  IAML    1925 10.01        40.0 0.32                          53.4 169 
+ EGD  SZ EP       1925  5.14   34                         94   -0.3510 71.8 306 
+ EGD  SZ ES       1925 13.55                              94   -0.5310 71.8 306 
+ EGD  SZ  IAML    1925 14.36        18.3 0.40                          71.8 306 
+ BER  SZ ES       1925 15.29                              94    0.1810 75.5 317 
+ RUND SZ EP       1925  6.05   36                         94   -0.2310 76.7 319 
+ RUND SZ ES       1925 15.21                              94   -0.2410 76.7 319 
+ RUND SZ  IAML    1925 17.49        29.7 0.24                          76.7 319 
+ ASK  SZ EP       1925  7.98   55                         93   -0.2410 88.8 318 
+ ASK  SZ ES       1925 18.16                              93   -0.6710 88.8 318 
+ ASK  SZ  IAML    1925 18.67        13.2 0.50                          88.8 318 
+ KMY  SZ IP     C 1925  8.54   54                         93   -0.7610 95.5 218 
+ KMY  SZ IPg      1925  9.96                              93    0.6610 95.5 218 
+ KMY  SZ ES       1925 19.23                              93   -1.4810 95.5 218 
+ KMY  SZ  IAML    1925 20.51        11.4 0.20                          95.5 218 
+ SUE  SZ EP       1925 18.38   48                         50    0.4510  154 328 
+ SUE  SZ ES       1925 35.75                              50    0.0210  154 328 
+ SUE  SZ  IAML    1925 37.90         9.3 0.13                           154 328 
+ SNARTSZ ES       1925 41.76                              50    0.0810  181 162 
+ SNARTSZ  IAML    1925 44.36        19.7 0.20                           181 162 
+ KONO BZ EP       1925 23.59                              50    1.3010  189  97 
+ KONO BZ ES       1925 46.37                              50    3.0510  189  97 
+ NAO  SZ  Pn      1925 33.80                              50    1.1410  272  66 
+ NAO  SZ  Lg      1926 08.20                               0   -1.3010  272  66 
+ NBO  SZ  Pn      1925 34.30                              50    0.8510  278  61 
+ NBO  SZ  Lg      1926 10.40                               0   -0.8210  278  61 
+ NB2  SZ  Pn      1925 36.32                              50    0.1210  300  63 
+ NB2  SZ  Pg      1925 40.77                              91   -1.5710  300  63 
+ NB2  SZ  Lg      1926 16.57                               0   -0.7510  300  63 
+ NC6  SZ  Pn      1925 36.85                              50    0.5010  302  69 
+ NC6  SZ  Pg      1925 41.25                              91   -1.3410  302  69 
+ NC6  SZ  Lg      1926 16.12                               0   -1.6410  302  69 
+ MOL  SZ ES       1926 12.31                              50    3.6910  306  12 
+ HFS  SZ  Pn      1925 50.67                  265.2  9.5  50 -3 0.3110  415  83 
+ HFS  SZ  Sn      1926 33.05                  260.7  3.4  50 -8 0.9010  415  83 
+ HFS  SZ  Lg      1926 46.79                  270.1  3.9   0  1-2.3010  415  83 
+                                                                                

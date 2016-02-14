@@ -1,0 +1,26 @@
+ 2006 11 4 1803 34.6 L  66.226  12.724 11.0  TES  3 0.0 0.4LTES-0.2CTES 1.1WBER1
+ 2006 11 4 1803 34.6 L                       TES        1.3WTES                1
+ SPEC AVERAGE  MO 11.0 ST0.584 OM -0.1 f011.00 R0.1147 AL 2.67 WI  3.3 MW  1.3 3
+ SPEC SD       MO  0.6 ST0.511 OM  0.2 f0 0.28 R0.0029 AL      WI      MW  0.4 3
+ GAP=323        0.30       2.5     6.9  4.9  0.4682E+01  0.1913E+02  0.5102E+01E
+ SPEC STOKS  Z MO 10.4 ST0.073 OM -0.3 f010.72 R0.1175 AL 3.19 WI  4.1 MW  0.9 3
+ SPEC STOKS  Z T18 343 K 0.000 GD 36.9 VS 3.60 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ SPEC STOKS  Z MO 11.5 ST  1.1 OM  0.1 f011.27 R0.1118 AL 2.15 WI  2.6 MW  1.6 3
+ SPEC STOKS  Z T18 340 K 0.000 GD 36.9 VP 6.20 DE 3.00 Q0440.0 QA 0.70 VS 3.60 3
+ ACTION:SPL 14-12-11 12:04 OP:jh   STATUS:               ID:20061104180334     I
+ 2006-11-04-1802-59S.STOK__003                                                 6
+ 2006-11-04-1803-04S.STOK1_003                                                 6
+ 2006-11-04-1803-04S.STOK2_003                                                 6
+ STAT SP IPHASW D HRMM SECON CODA AMPLIT PERI AZIMU VELO AIN AR TRES W  DIS CAZ7
+ STOK SZ IP       18 3 38.02    8                        122    0.0410 17.8  48 
+ STOK SZ I        18 3 40.34                                           17.8  48 
+ STOK SZ ES       18 3 40.46                             122   -0.0210 17.8  48 
+ STOK SZ  IAML    18 3 40.65        13.0 0.04                          17.8  48 
+ STOK SZ E        18 3 42.35                                           17.8  48 
+ STOK2SZ IP       18 3 39.98   15                        109    0.0210 31.3  67 
+ STOK2SZ ES       18 3 43.91                             109   -0.0110 31.3  67 
+ STOK2SZ  IAML    18 3 44.28         3.3 0.08                          31.3  67 
+ STOK1SZ EP       18 3 40.51   13                        107   -0.0510 35.2  30 
+ STOK1SZ ES       18 3 45.00                             107    0.0310 35.2  30 
+ STOK1SZ  IAML    18 3 45.55         2.7 0.17                          35.2  30 
+                                                                                
