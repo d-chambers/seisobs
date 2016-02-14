@@ -157,7 +157,7 @@ sline
 Seisobs.core.Seisob then does the heavy lifting of taking many of these series that contain data for each line type and tries to appropriate fill the catalog structure. There are still some bumps here, and seisobs doesn't support all the different types of comment lines yet, but the framework should be sufficient to expand the functionality. At this point I am looking for some people that might understand nordic and quakeML formats better than I do to help expand the functionality. 
 
 
-## Why use a class before the convert call? 
+## Why use a class before the seis2cat call? 
 I decided to wrap the seis2cat and seis2disk functions in a class for a few reasons, but the main one is that s-file line that lists the phase and arrival time (nordic format, linetype 4) only has fields for station and component. The Obspy Pick class (obspy.core.event.Pick) has a waveform id (obspy.core.event.WaveformStreamID) that requires the network, station, location, and channel. Seisobs has several ways to deal with this, and tries each in this order:
 
 1. Use the full nslc code if it is found in a comment line in the s-file. If more than one is found use the first. 
