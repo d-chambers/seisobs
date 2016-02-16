@@ -147,6 +147,14 @@ def return_events(get_cat):
         events.append(event)
     return events
 
+@pytest.fixture(scope='module')
+def return_event_comments(get_cat):
+    comments = []
+    for event in get_cat:
+        for comment in event.comments:
+            comments.append(comment)
+    return comments
+
 class Test_S2OB_events():
     def test_type(self, return_events):
         eves = return_events
@@ -159,6 +167,15 @@ class Test_S2OB_events():
             for attr in attrs:
                 assert hasattr(eve, attr)
             assert len(eve.event_descriptions) > 0
+    
+class Test_S2OB_event_comments:
+    def test_type(self, return_event_comments):
+        for com in return_event_comments:
+            assert isinstance(com, obspy.core.event.Comment)
+    def test_length(self, return_event_comments):
+        for com in return_event_comments:
+            assert isinstance(com.text, text)
+            assert len(com.text) > 0      
     
 ######## test origins
     

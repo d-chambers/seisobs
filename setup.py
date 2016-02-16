@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 setup(
     name='seisobs',
 
-    version = '0.0.1',
+    version = '0.0.1_1',
 
     description = 'A package for converting s-files to obspy catalog objects',
     

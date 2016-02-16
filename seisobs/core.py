@@ -13,6 +13,7 @@ import pandas as pd
 import warnings
 import ipdb
 from builtins import str as text
+import codecs
 
 def seis2cat(sfile, authority='local', inventory_object=None, 
              default_network='UK', default_channel='BH', verbose=False):
@@ -145,33 +146,6 @@ class Seisob(object):
             cols = ['network', 'station', 'location', 'channel']
             self.wid_df = pd.DataFrame(chans, columns=cols)
     
-    def load_sfile_stream(self, arg):
-        """
-        Function to load the seisan file linked to an s-file into an obspy 
-        stream
-        
-        arg : str, df, or Sline instance
-            arg can be either a path to an s-file, a dataframe created with 
-            the load_sfile_into_df function
-        
-        Returns
-        --------
-        An obspy Stream object
-        """
-        if isinstance(arg, text):
-            df = self.load_sfile_into_df(arg)
-        if isinstance(arg, pd.DataFrame):
-            df = arg
-        df6 = df[df.linetype=='6']
-        if len(df6) != 1:
-            msg = 'Exactly one line 6 is required, more or less were found'
-            raise ValueError(msg)
-        ser = df6.iloc[0].series
-        path = ser.comment[:-1].rsplit()
-        
-        st = obspy.read(path)
-        return st
-        
     def seis2cat(self, sfile, **kwargs):
         """
         Read a seisan s-file, or directory of s-files, 
@@ -321,13 +295,15 @@ class Seisob(object):
             msg = '%s is a seisan backup file' % sfile
             raise ValueError(msg)
         df = pd.DataFrame(columns=['linetype', 'series'], dtype=object)
-        with open(sfile, 'rb') as sfile:
+        with open(sfile, 'r') as sfile:
             for slnum, sline in enumerate(sfile):
-                if len(sline.strip()) < 1: # if blank line at end of file
+                sli = sline.decode('utf-8').rstrip(os.linesep)
+                if len(sline.rstrip()) < 1: # if blank line at end of file
                     continue
                 try:
-                    slin = Sline(sline, seiob=self)
+                    slin = Sline(sli, seiob=self)
                 except (ValueError):
+                    ipdb.set_trace()
                     msg = '%s in %s is not a valid line, skipping' % (sline, sfile)
                     self.warn(msg)
                     continue
@@ -360,7 +336,8 @@ class Seisob(object):
         sd3 = sdf2df(sdf, '3')
         comments = []
         for ind, row in sd3.iterrows():
-            comments.append(obspy.core.event.Comment(row.comment))
+            com = obspy.core.event.Comment(text=row.comment)
+            comments.append(com)
         return comments
 
     def _gen_event_resource_id(self, origins):
@@ -464,8 +441,6 @@ class Seisob(object):
         pidi['phase_hint'] = row.phaseid
         pidi['polarity'] = self._get_polarity(row)
         pidi['onset'] = self._get_onset(row)
-        if len(row.component) < 1:
-            ipdb.set_trace()
         # get waveform_id
         net, sta, loc, cha = self._get_nslc(get_nscl_dict)
         pidi['waveform_id'] = self._make_waveform_id(net, sta, loc, cha)
@@ -600,11 +575,8 @@ class Seisob(object):
         if hour >= 24:
             hour = hour - 24
             year, month, day = self._get_y_m_d(utc1 + 3600*24)
-        try:
-            utc = obspy.UTCDateTime(year=year, month=month, day=day, hour=hour, 
-                                    minute=minute)
-        except:
-            ipdb.set_trace()
+        utc = obspy.UTCDateTime(year=year, month=month, day=day, hour=hour, 
+                                minute=minute)
         utc += second
         return utc
     
@@ -712,10 +684,7 @@ class Seisob(object):
         return resource_id
         
     def _get_utc(self, row): # take a one line row and return utc object
-        try:
-            ye = int(row.year)
-        except:
-            ipdb.set_trace()
+        ye = int(row.year)
         mo = int(row.month)
         da = int(row.day)
         ho = int(row.hour)
@@ -747,7 +716,7 @@ class Sline(object):
         self.slinetype = None
         self.sseries = None
         self.seiob = seiob
-        if not (isinstance(sline, str) or sline is None):
+        if not (isinstance(sline, (text, str)) or sline is None):
             msg = 'sline must be a string or None'
             raise ValueError(msg)
         if sline:
@@ -818,7 +787,34 @@ class Sline(object):
             return '0'
         else:
             return sline[79]
-     
+            
+    def load_sfile_stream(self, arg):
+        """
+        Function to load the seisan file linked to an s-file into an obspy 
+        stream
+        
+        arg : str, df, or Sline instance
+            arg can be either a path to an s-file, a dataframe created with 
+            the load_sfile_into_df function
+        
+        Returns
+        --------
+        An obspy Stream object
+        """
+        if isinstance(arg, text):
+            df = self.load_sfile_into_df(arg)
+        if isinstance(arg, pd.DataFrame):
+            df = arg
+        df6 = sdf2df(df, '6', self)
+        if len(df6) != 1:
+            msg = 'Exactly one line 6 is required, more or less were found'
+            raise ValueError(msg)
+        ser = df6.iloc[0].series
+        path = ser.comment[:-1].rsplit()
+        
+        st = obspy.read(path)
+        return st
+        
     def __bool__(self):
          return (self.slinetype is not None) and (self.sseries is not None)
     
@@ -916,8 +912,6 @@ def get_nscl_from_thin_air(ser4=None, network='', channel_prefix='', **kwargs):
     net = network
     sta = ser4.station
     cha = channel_prefix + ser4.component
-    if len(cha) < 3:
-        ipdb.set_trace()
     loc = ' '
     return net, sta, loc, cha
 
