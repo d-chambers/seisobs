@@ -11,6 +11,7 @@ http://seis.geus.net/software/seisan/seisan.pdf appendix A
 import warnings
 import obspy
 import ipdb
+import sys  
 
 ##### Define important line types for various objects
 
