@@ -131,8 +131,11 @@ def validate4(ser):
         msg = 'invalid azimuth found in series'
         raise ValueError(msg)
     if len(ser.station.strip()) == 0:
-        msg = 'No station line found in series'
+        msg = 'No station field found in series'
         raise ValueError(msg)
+    if len(ser.component.strip()) == 0:
+        msg = 'No component field found in series'
+        raise ValueError(msg)    
     validate_utc(ser, ymd=False)
     validate_blanks(ser)
 
@@ -158,6 +161,7 @@ specs['E'] = Spec(cse, cne, cfe, validatee)
 ## format for line type H (high accuracy hypocenter line)
 
 csh = [(0,1), (1,5), (5,6), (6,8), (8,10), (10,11), (11,13), (13,15), (15,16),
+
        (16,22), (22,23), (23,32), (32,33), (33,43), (43,44), (44,52), (52,53),
         (53,59), (59,79), (79,80)]
 cnh = ['bla1', 'year', 'bla2', 'month', 'day', 'fixotime', 'hour', 'minute', 
@@ -209,8 +213,8 @@ csf = [(0,10), (10,20), (20,30), (30,35), (35,40), (40,45), (45,50), (50,55),
        (55,60), (60,62), (62,63), (63,65), (66,69), (70,77), (77,78), (78,79),
         (79,80)]
 cnf = ['strike', 'dip', 'rake', 'strikeerror', 'diperror', 'rakeerror', 'fiterror',
-       'stationdistratio', 'amplituderatio', 'numbadpolarity', 'unused', 'numbadamplitudes',
-       'agency', 'program', 'quality', 'bla2', 'linetype']
+       'stationdistratio', 'amplituderatio', 'numbadpolarity', 'unused', 
+       'numbadamplitudes', 'agency', 'program', 'quality', 'bla2', 'linetype']
 cff = ['%10.0f', '%10.0f', '%10.0f', '%5.1f', '%5.1f', '%5.1f', '%5.1f', '%5.1f', 
        '%5.1f', '%2d', '%s', '%2d', '%-3s', '%-7s', '%1s', '%1s' ,'%1s']
 
@@ -448,7 +452,5 @@ def _get_str2obj(strcnvr, fmtstr):
             raise TypeError(msg)
         except ValueError:
             if coninst.type == float or coninst.type == int and len(obj.strip()) == 0:
-                msg = 'Blank line found, casting into appropriate type'
-                warnings.warn(msg)
                 return coninst.type(0)
     return str2obj   

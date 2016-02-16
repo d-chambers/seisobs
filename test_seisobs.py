@@ -119,8 +119,7 @@ cattars = ['events']
 
 @pytest.fixture(scope='module')
 def get_cat():
-    seiob = seisobs.Seisob()
-    return seiob.seis2cat(test_dir)
+    return seisobs.core.seis2cat(test_dir)
 
 @pytest.yield_fixture(scope='module')
 def create_blank_directory():
@@ -158,8 +157,6 @@ class Test_S2OB_events():
         attrs = ['origins', 'magnitudes', 'event_descriptions']
         for eve in eves:
             for attr in attrs:
-                if not hasattr(eve, attr):
-                    ipdb.set_trace()
                 assert hasattr(eve, attr)
             assert len(eve.event_descriptions) > 0
     
@@ -214,8 +211,6 @@ class Test_S2OB_arrivals:
         for ar in return_arrivals:
             pick_id = ar.pick_id
             pick = pick_id.getReferredObject()
-            if not isinstance(pick, obspy.core.event.Pick):
-                ipdb.set_trace()
             assert isinstance(pick, obspy.core.event.Pick)
             
 #####  test picks
@@ -268,6 +263,7 @@ class Test_S2OB_Picks():
         for pick in return_picks:
             assert hasattr(pick, 'waveform_id')
             assert isinstance(pick.waveform_id, obspy.core.event.WaveformStreamID)
+            assert len(pick.waveform_id.channel_code) == 3 # chan code is 3 chars
             
 g1 = ' 1996 1021 2359 59.0 L  61.689   3.259 15.0  TES 35 3.0 3.3LTES 3.0CTES 3.2LNAO1'
 g4 = ' FOO  SZ IS       2401 10.01                              70   -1.2710 95.1  95 '

@@ -10,12 +10,8 @@ from __future__ import (absolute_import, division, print_function,
 
 import seisobs.core
 import seisobs.specs
-import sys
 
-
-def deb(*args):
-    global de
-    de = args
-    sys.exit(1)
-    
+# bring a few key objects to front
 Seisob = seisobs.core.Seisob
+seis2cat = seisobs.core.seis2cat
+seis2dist = seisobs.core.seis2disk

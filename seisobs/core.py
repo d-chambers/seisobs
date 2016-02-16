@@ -14,6 +14,90 @@ import warnings
 import ipdb
 from builtins import str as text
 
+def seis2cat(sfile, authority='local', inventory_object=None, 
+             default_network='UK', default_channel='BH', verbose=False):
+    """
+    Function to convert an s-file, or directory of s-files, to obspy catalog 
+    object
+    
+    Parameters
+    ---------
+    sfile : str
+        Path to an s-file (nordic format) or directory of s-files
+    authority : str
+        Default authority for resource IDs
+    inventory_object : None, obspy.station.Inventory or path to such
+        If not None, an inventory object or path to a file that is readable
+        by obspy.read_station to use to obtain full NSLC codes. See docs string
+        on Seisob._get_nslc for info on why this might be useful. 
+    default_network : str
+        The default network to use in resource IDs when the real network code
+        is not recorded in the s-file or the inventory-object
+    default_chan : str
+        Two letter prefix to make channel code to proceed component for
+        guessing at station codes
+    verbose : bool
+        If True print all user warnings, else suppress them
+    
+    Returns
+    -------
+    obspy.core.event.Catalog object
+    """
+    so = Seisob(**locals())
+    cat = so.seis2cat(sfile)
+    return cat
+
+def seis2disk(sfile, sformat='quakeml', savedir='quakeml', ext='.xml',
+              directory_struct='yyyy-mm', skip_if_exists=True, 
+              authority='local', inventory_object=None, 
+              default_network='UK', default_channel='BH', verbose=False):
+    """
+    Save a seisan s-file, or directory of s-files, in nordic format,
+    to disk using obspy Catalog as intermediate step. Raises ValueError
+    if no valid s-files are found.
+    
+    Parameters
+    -----------
+    sfile : str
+        Path to the sfile or sdirectory
+    sformat : str
+        The format to use when saving files. Any obspy-supported format
+        is fine. See obspy doc for details. 
+    savedir : str
+        seis2disk will save each S-file in a directory named savedir with
+        the same structure as s-files (savedir-year-month). File names 
+        will be yyyy-mm-ddThh-mm-ss based on utcdate time in first origin.
+        Directory structure is controlled by the directory_structure arg.
+    ext : str
+        Extensions of file name if saving events
+    directory_struct : str
+        The structure of the subdirectories in savedir. Permitted values 
+        are:
+            yyyy-mm-dd : savedir/year/month/day/file
+            yyyy-mm : savedir/year/month/file
+            yyyy : savedir/year/file
+            flat : savedir/file
+    skip_if_exists : bool
+        If a file already exists that the new file would be named, 
+        guessing based on s-file name, then don't read file just continue
+        to next
+    authority : str
+        Default authority for resource IDs
+    inventory_object : None, obspy.station.Inventory or path to such
+        If not None, an inventory object or path to a file that is readable
+        by obspy.read_station to use to obtain full NSLC codes. See docs string
+        on Seisob._get_nslc for info on why this might be useful. 
+    default_network : str
+        The default network to use in resource IDs when the real network code
+        is not recorded in the s-file or the inventory-object
+    default_chan : str
+        Two letter prefix to make channel code to proceed component for
+        guessing at station codes
+    verbose : bool
+        If True print all user warnings, else suppress them
+    """
+    so = Seisob(**locals())
+    so.seis2disk(sfile, **locals())
 
 ##### seis2ob and supporting functions
 
@@ -24,27 +108,27 @@ class Seisob(object):
     Parameters 
     -----------
     authority : str
-        Default authority to use
-    inventory_object : None, obspy.station.inventory.Inventory or path to such
-        Either None, in which case the seisan file for each s-file will be
-        read to get information for the picks (like network, channel, location)
-        or a station inventory that has all the stations mentioned in the 
-        s-files. Can also be a path to a file obspy.read_inventory  can read.
-        Using a station inventory is much quicker but requires you to have 
-        created such an object. 
+        Default authority for resource IDs
+    inventory_object : None, obspy.station.Inventory or path to such
+        If not None, an inventory object or path to a file that is readable
+        by obspy.read_station to use to obtain full NSLC codes. See docs string
+        on Seisob._get_nslc for info on why this might be useful. 
     default_network : str
-        The default network to use if pick_id_object fails, ie if no station
-        inventory can be read and no waveform files can be read.
+        The default network to use in resource IDs when the real network code
+        is not recorded in the s-file or the inventory-object
     default_chan : str
-        The default channel to use for making channel code guess
+        Two letter prefix to make channel code to proceed component for
+        guessing at station codes
     verbose : bool
         If True print all user warnings, else suppress them
     """
     def __init__(self, authority='local', inventory_object=None, 
-                 default_network='UK', default_chan='BH', verbose=False):
+                 default_network='UK', default_channel='BH', verbose=False,
+                 **kwargs):
         self.authority = authority
         self.default_network = default_network
         self.verbose = verbose
+        self.default_channel = default_channel
         self.df_cache = {}
         if isinstance(inventory_object, text):
             try:
@@ -88,7 +172,7 @@ class Seisob(object):
         st = obspy.read(path)
         return st
         
-    def seis2cat(self, sfile):
+    def seis2cat(self, sfile, **kwargs):
         """
         Read a seisan s-file, or directory of s-files, 
         in nordic format and return an obspy catalog object. Raises ValueError
@@ -105,7 +189,7 @@ class Seisob(object):
     
         Notes
         ------
-        http://seis.geus.net/software/seisan/seisan.pdf appendix A nordic format
+        http://seis.geus.net/software/seisan/seisan.pdf appendix A
         """
         cat = obspy.core.event.Catalog()
         if os.path.isdir(sfile):
@@ -126,7 +210,7 @@ class Seisob(object):
         return cat
         
     def seis2disk(self, sfile, sformat='quakeml', savedir='quakeml', ext='.xml',
-                  directory_struct='yyyy-mm', skip_if_exists=True):
+                  directory_struct='yyyy-mm', skip_if_exists=True, **kwargs):
         """
         Save a seisan s-file, or directory of s-files, in nordic format,
         to disk using obspy Catalog as intermediate step. Raises ValueError
@@ -239,8 +323,10 @@ class Seisob(object):
         df = pd.DataFrame(columns=['linetype', 'series'], dtype=object)
         with open(sfile, 'rb') as sfile:
             for slnum, sline in enumerate(sfile):
+                if len(sline.strip()) < 1: # if blank line at end of file
+                    continue
                 try:
-                    slin = Sline(sline)
+                    slin = Sline(sline, seiob=self)
                 except (ValueError):
                     msg = '%s in %s is not a valid line, skipping' % (sline, sfile)
                     self.warn(msg)
@@ -336,7 +422,6 @@ class Seisob(object):
             ci['author'] = se.operator
             ci['creation_time'] = self._get_utc_from_I(se)
         creation = obspy.core.event.CreationInfo(**ci)
-        
         return creation
     
     def _get_quality(self, ser1, dfe):
@@ -379,6 +464,8 @@ class Seisob(object):
         pidi['phase_hint'] = row.phaseid
         pidi['polarity'] = self._get_polarity(row)
         pidi['onset'] = self._get_onset(row)
+        if len(row.component) < 1:
+            ipdb.set_trace()
         # get waveform_id
         net, sta, loc, cha = self._get_nslc(get_nscl_dict)
         pidi['waveform_id'] = self._make_waveform_id(net, sta, loc, cha)
@@ -401,8 +488,6 @@ class Seisob(object):
         amdi['period'] = row.period
         amplitude = obspy.core.event.Amplitude(**amdi)
         return amplitude
-        
-        
 
     def _get_nslc(self, dic):
         """
@@ -418,6 +503,7 @@ class Seisob(object):
             loc = ' '. This will be wrong but it is as close as we can get. 
         """
         ser = dic['ser4']
+        dic['seiob'] = self
         # try using comment lines
         if dic['scnldf'] is not None:
             try:
@@ -442,8 +528,8 @@ class Seisob(object):
                 msg = (('Valid waveform file exist but %s %s is not in it') 
                         % (ser.station, ser.component))
         # everything has failed if you are here, fill in partial info
-        msg = (('All other methods failed, filling in partial nslc for station '
-                '%s on component %s') % (ser.station, ser.component))
+        msg = (('All other methods failed, filling in partial nslc for station'
+                ' %s on component %s') % (ser.station, ser.component))
         self.warn(msg)
         return get_nscl_from_thin_air(**dic)
     
@@ -476,6 +562,7 @@ class Seisob(object):
         out['nslcdf'] = nslcdf
         out['st'] = st
         out['network'] = self.default_network
+        out['channel_prefix'] = self.default_channel
         return out
             
             
@@ -648,7 +735,7 @@ class Seisob(object):
         call self.warn for given message if verbose, else swallow
         """
         if self.verbose:
-            self.warnings.warn(msg)
+            warnings.warn(msg)
 
 ###### Sline class
 
@@ -656,9 +743,10 @@ class Sline(object):
     """
     object for storing sline info.
     """
-    def __init__(self, sline=None, validate=True):
+    def __init__(self, sline=None, validate=True, seiob=None):
         self.slinetype = None
         self.sseries = None
+        self.seiob = seiob
         if not (isinstance(sline, str) or sline is None):
             msg = 'sline must be a string or None'
             raise ValueError(msg)
@@ -686,8 +774,12 @@ class Sline(object):
                 seisobs.specs.specs[ltype].validate(self.sseries)
                 
             except ValueError: #if this is really ment to be line 1
-                msg = '%s was assigned to linetype 4 but raised error, trying linetype 1'
-                warnings.warn(msg)
+                msg = (('%s was assigned to linetype 4 but raised error, '
+                        'trying linetype 1') % sline)
+                if self.seiob is None:
+                    warnings.warn(msg)
+                else:
+                    self.seiob.warn(msg)
                 ltype = '1'
                 self.sseries = self._load_sline(sline, ltype)
             self.sseries.linetype = ltype # set linetyp in series
@@ -789,7 +881,7 @@ def get_nslc_from_comment(ser4=None, scnldf=None, **kwargs):
     ser = tdf.iloc[0]
     return ser.network, ser.station, ser.location, ser.channel
 
-def get_nslc_from_inventory(ser4=None, nslcdf=None, **kwargs):
+def get_nslc_from_inventory(ser4=None, nslcdf=None, seiob=None, **kwargs):
     con1 = nslcdf.station==ser4.station
     con2 = nslcdf.station.str.contains(ser4.station)
     tdf = nslcdf[con1 & con2]
@@ -798,7 +890,10 @@ def get_nslc_from_inventory(ser4=None, nslcdf=None, **kwargs):
         raise ValueError(msg)
     if len(tdf) > 1:
         msg = 'More than one matching scnl found, using first'
-        warnings.warn(msg)
+        if seiob is None:
+            warnings.warn(msg)
+        else:
+            seiob.warn(msg)
     ser = tdf.iloc[0]     
     return ser.network, ser.station, ser.location, ser.channel
 
@@ -817,10 +912,12 @@ def get_nscl_from_waveform(ser4=None, st=None, **kwargs):
     loc, cha = tr.stats.location, tr.stats.channel
     return net, sta, loc, cha
 
-def get_nscl_from_thin_air(ser4=None, network=None, **kwargs):
+def get_nscl_from_thin_air(ser4=None, network='', channel_prefix='', **kwargs):
     net = network
     sta = ser4.station
-    cha = ser4.component
+    cha = channel_prefix + ser4.component
+    if len(cha) < 3:
+        ipdb.set_trace()
     loc = ' '
     return net, sta, loc, cha
 

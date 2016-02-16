@@ -19,19 +19,9 @@ To read an entire directory of S files into one catalog object simply do:
 
 ```python
 import seisobs
-import gc
 sfile_directory = 'TEST_'
-so = seisobs.core.Seisob()
-cat = so.seis2cat(sfile_directory)
+cat = seisobs.seis2cat(sfile_directory)
 ```
-
-    seisobs\specs.py:452: UserWarning: Blank line found, casting into appropriate type
-      warnings.warn(msg)
-    seisobs\core.py:662: UserWarning: %s was assigned to linetype 4 but raised error, trying linetype 1
-      warnings.warn(msg)
-    seisobs\core.py:760: UserWarning: More than one matching scnl found, using first
-      warnings.warn(msg)
-
 
 
 ```python
@@ -41,19 +31,19 @@ cat
 
 
 
-    63 Event(s) in Catalog:
+    50 Event(s) in Catalog:
     1990-12-13T11:09:19.800000Z | +60.328,   +5.167 | 0.9 MC
     1993-09-29T22:25:48.600000Z | +18.066,  +76.451 | 6.3 MB
     ...
-    2016-01-03T09:13:02.300000Z | +47.471, -115.784 | -0.2 ML
-    2016-02-02T13:15:50.900000Z | +47.483, -115.787 | 1.0 ML
+    2009-01-15T17:49:39.100000Z | +46.857, +155.154 | 6.9 MB
+    2011-01-29T06:55:00.000000Z |  +0.000,   +0.000
     To see all events call 'print(CatalogObject.__str__(print_all=True))'
 
 
 
-This should have taken about 20 seconds to read in 60+ files. A bit slow but hopefully you don't have to convert thousands of s-files to xml very often.
+This should have taken about 20 seconds to read in 50 files. A bit slow so hopefully you don't have to read thousands of s-files very often.
 
-To convert a directory of sfiles into a directory of quakeML files you can use the seis2disk method of the seisobs class. This is probably the best route to take if you need to convert a large number of files because seisobs load, convert, and save one file at time to avoid excessive memory usage. 
+To convert a directory of sfiles into a directory of quakeML files you can use the seis2disk function (seisobs.seis2disk). This is probably the best route to take if you need to convert a large number of files because seisobs loads, converts, and saves one file at time to avoid excessive memory usage. 
 
 ## How it works
 
@@ -157,8 +147,8 @@ sline
 Seisobs.core.Seisob then does the heavy lifting of taking many of these series that contain data for each line type and tries to appropriate fill the catalog structure. There are still some bumps here, and seisobs doesn't support all the different types of comment lines yet, but the framework should be sufficient to expand the functionality. At this point I am looking for some people that might understand nordic and quakeML formats better than I do to help expand the functionality. 
 
 
-## Why use a class before the seis2cat call? 
-I decided to wrap the seis2cat and seis2disk functions in a class for a few reasons, but the main one is that s-file line that lists the phase and arrival time (nordic format, linetype 4) only has fields for station and component. The Obspy Pick class (obspy.core.event.Pick) has a waveform id (obspy.core.event.WaveformStreamID) that requires the network, station, location, and channel. Seisobs has several ways to deal with this, and tries each in this order:
+## Gotchas
+The s-file line that lists the phase and arrival time (nordic format, linetype 4) only has fields for station and component. The Obspy Pick class (obspy.core.event.Pick) has a waveform id (obspy.core.event.WaveformStreamID) that requires the network, station, location, and channel. Seisobs has several ways to deal with this, and tries each in this order:
 
 1. Use the full nslc code if it is found in a comment line in the s-file. If more than one is found use the first. 
     
@@ -168,13 +158,18 @@ I decided to wrap the seis2cat and seis2disk functions in a class for a few reas
     
 4. Use the network code (default is 'UK' for unknown) and channel code (default is 'BH') that is set when creating the Seisob instance. This is a very bad option and only executed when all other methods fail. A user warning will also be raised if the Seisob instance has it verbose flag set to True.
     
-So, the class was needed to efficiently handle default values, as well as a network Inventory. 
+If all else fails and method number 4 is used it is not likely the waveform id will be correct. I recommend attaching an Inventory with the inventory_object argument of both seis2cat and seis2disk as it will be the most sure, and fastest, method for getting the waveform ID info.
 
 ## Running the tests
 The tests are in py.test. You can run them simply by typing the following in a terminal (not python) when your cwd is set to the seisobs directory:
 ```bash
 py.test
 ```
+or 
+```bash
+py.test test_seisobs.py
+```
+
 It is that simple. 
 
 ## Seisobs in obspy?
@@ -183,13 +178,15 @@ I hope to submit a pull request to merge seisobs into the seisan module of obspy
 
 1. Pep 8: I have a few lines that go past the limit of 79 chars. I prescribe to the "beyond pep8" ideas Raymond Hettinger presented in [his 2015 pycon talk](https://www.youtube.com/watch?v=wf-BqAjZb8M) but I am happy to wrap some lines to meet obspy line width limits.
 
-2. Doc Strings: I used the [google style doc string style](http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html) rather than the reST style because it looks better in [spyder](https://github.com/spyder-ide/spyder), the IDE  I use. I don't mind changing these to reST style. 
+2. Doc Strings: I used the [google style doc string style](http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html) rather than the reST style because it looks better in [spyder](https://github.com/spyder-ide/spyder), the IDE  I use. These will need to be changed, but this shouldn't take too long.  
 
-3. I used the py.test framework rather than nose for all the automated tests. This is a bigger problem because I have never used nose (I am just getting my feet wet with py.test) so I may need some help with this one if it is required. 
+3. I used the py.test framework rather than nose for all the automated tests. This is a bigger problem because I have never used nose (I am just getting my feet wet with py.test) so I may need some help with this one. 
 
-4. I used pandas extensively because I love the DataFrame and Series interface and methods. Pandas is not currently a required dependency of obspy so I would need to rewrite large chunks of the code to stick within current dependencies. I am not very excited about doing this but I may if I get some extra time.  
+4. I used pandas extensively because the DataFrame and Series are very powerful and convenient containers. Pandas is not currently a required dependency of obspy so I would need to rewrite large chunks of the code to stick within current dependencies. I am not very excited about doing this but I may if I get some extra time.  
 
 5. I am not sure if it is Python 3 compatible.  This should be easy to check but I haven’t done so yet. 
+
+6. Seisobs needs more general testing on a larger number of s-files than just those included in the test directory of seisan. 
 
 ## Catalog object to seisan?
 
