@@ -98,7 +98,7 @@ def seis2disk(sfile, sformat='quakeml', savedir='quakeml', ext='.xml',
         If True print all user warnings, else suppress them
     """
     so = Seisob(**locals())
-    so.seis2disk(sfile, **locals())
+    so.seis2disk(**locals())
 
 ##### seis2ob and supporting functions
 

@@ -14,4 +14,4 @@ import seisobs.specs
 # bring a few key objects to front
 Seisob = seisobs.core.Seisob
 seis2cat = seisobs.core.seis2cat
-seis2dist = seisobs.core.seis2disk
+seis2disk = seisobs.core.seis2disk
