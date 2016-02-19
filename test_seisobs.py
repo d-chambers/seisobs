@@ -167,6 +167,14 @@ class Test_S2OB_events():
             for attr in attrs:
                 assert hasattr(eve, attr)
             assert len(eve.event_descriptions) > 0
+    def test_preferreds(self, return_events):
+        eves = return_events
+        for eve in eves:
+            if len(eve.origins):
+                assert isinstance(eve.preferred_origin(), obspy.core.event.Origin)
+            if len(eve.magnitudes):
+                assert isinstance(eve.preferred_magnitude(), obspy.core.event.Magnitude)
+
     
 class Test_S2OB_event_comments:
     def test_type(self, return_event_comments):

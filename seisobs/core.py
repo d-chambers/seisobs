@@ -13,7 +13,6 @@ import pandas as pd
 import warnings
 import ipdb
 from builtins import str as text
-import codecs
 
 def seis2cat(sfile, authority='local', inventory_object=None, 
              default_network='UK', default_channel='BH', verbose=False):
@@ -179,7 +178,7 @@ class Seisob(object):
             eve = self._load_event(sdf)
             cat.events.append(eve)
         if len(cat.events) == 0:
-            msg = 'No valid s-files found, no events created' 
+            msg = 'No valid s-files found, no events created'
             raise ValueError(msg)
         return cat
         
@@ -277,7 +276,6 @@ class Seisob(object):
             msg = 'directory_struct of %s not supported' % directory_struct
             raise ValueError(msg)
             
-
     def load_sfile_into_df(self, sfile):
         """
         Load the contents of a single sfile into a dataframe
@@ -303,7 +301,6 @@ class Seisob(object):
                 try:
                     slin = Sline(sli, seiob=self)
                 except (ValueError):
-                    ipdb.set_trace()
                     msg = '%s in %s is not a valid line, skipping' % (sline, sfile)
                     self.warn(msg)
                     continue
@@ -322,6 +319,7 @@ class Seisob(object):
         magnitudes = self._get_magnitudes(sdf)
         picks, arrivals, amplitudes = self._get_picks_arrivals_amplitudes(sdf) 
         origins = self._get_origins(sdf, arrivals)
+        # load various params
         evdi['picks'] = picks
         evdi['origins'] = origins
         evdi['magnitudes'] = magnitudes
@@ -330,6 +328,12 @@ class Seisob(object):
         evdi['comments'] = self.get_comments(sdf)
         evdi['event_descriptions'] = self._make_description(sdf)
         eve = obspy.core.event.Event(**evdi)
+        # set preferred origin and magnitudes
+        if len(origins):
+            eve.preferred_origin_id = str(eve.origins[0].resource_id)
+        if len(magnitudes):
+            eve.preferred_magnitude_id = str(eve.magnitudes[0].resource_id)
+
         return eve
     
     def get_comments(self, sdf):
