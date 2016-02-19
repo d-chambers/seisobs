@@ -175,7 +175,7 @@ class Seisob(object):
                 msg = '%s is not a proper S-File' % sfile
                 self.warn(msg)
                 return obspy.core.event.Catalog()
-            eve = self._load_event(sdf)
+            eve = self._load_event(sdf, sfile)
             cat.events.append(eve)
         if len(cat.events) == 0:
             msg = 'No valid s-files found, no events created'
@@ -230,7 +230,7 @@ class Seisob(object):
                 msg = '%s is not a proper S-File' % sfile
                 self.warn(msg)
                 return 
-            eve = self._load_event(sdf)
+            eve = self._load_event(sdf, sfile)
             cat = obspy.core.event.Catalog(events=[eve])
             self._save_event(cat, utc, sformat, sname)
 
@@ -308,7 +308,7 @@ class Seisob(object):
         self._validate_sdf(df, sfile)
         return df
     
-    def _load_event(self, sdf):
+    def _load_event(self, sdf, sfile):
         """
         Function to take the sdf (which contains all files read in) and create an
         event object
@@ -324,7 +324,7 @@ class Seisob(object):
         evdi['origins'] = origins
         evdi['magnitudes'] = magnitudes
         evdi['amplitudes'] = amplitudes   
-        evdi['resource_id'] = self._gen_event_resource_id(origins)
+        evdi['resource_id'] = self._gen_event_resource_id(sfile)
         evdi['comments'] = self.get_comments(sdf)
         evdi['event_descriptions'] = self._make_description(sdf)
         eve = obspy.core.event.Event(**evdi)
@@ -344,9 +344,9 @@ class Seisob(object):
             comments.append(com)
         return comments
 
-    def _gen_event_resource_id(self, origins):
+    def _gen_event_resource_id(self, sfile):
         # Generate event resource id based on time in first origin
-        utc = origins[0].time
+        utc = self._get_utc_from_sfile_name(sfile)
         date_str = str(utc).split('.')[0].replace(':','-')
         resource_id = obspy.core.event.ResourceIdentifier(date_str)
         return resource_id
