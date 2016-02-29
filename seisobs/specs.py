@@ -10,7 +10,6 @@ http://seis.geus.net/software/seisan/seisan.pdf appendix A
 
 import warnings
 import obspy
-import ipdb
 import sys  
 
 ##### Define important line types for various objects
@@ -239,12 +238,10 @@ def validate_utc(ser, ymd=True, hms=True):
     if ymd:
         if not set(ds1).issubset(ser.index):
             msg = 'Series does not have all %s' % str(ds1)
-            ipdb.set_trace()
             raise ValueError(msg)
     if hms:
         if not set(ds2).issubset(ser.index):
             msg = 'Series does not have all %s' % str(ds2)
-            ipdb.set_trace()
             raise ValueError(msg)
             
     utc = obspy.UTCDateTime(year=2015, month=01, day=15)
@@ -287,10 +284,7 @@ def validate_blanks(ser):
     blanks =('bla%d' % d for d in xrange(1, 12))
     for blank in blanks:
         if blank in ser.index:
-            try:
-                blastr = ser[blank].strip()
-            except:
-                ipdb.set_trace()
+            blastr = ser[blank].strip()
             if len(blastr) > 0:
                 msg = '%s was found in blank string on series' % blastr
                 raise ValueError(msg)

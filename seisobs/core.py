@@ -11,7 +11,6 @@ import os
 import seisobs
 import pandas as pd
 import warnings
-import ipdb
 from builtins import str as text
 
 def seis2cat(sfile, authority='local', inventory_object=None, 
