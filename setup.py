@@ -6,7 +6,7 @@
 from setuptools import setup, find_packages
 import os
 
-version_file = os.path.join('nispy', 'version.txt')
+version_file = os.path.join('seisobs', 'version.txt')
 with open(version_file) as vf:
     __version__ = vf.read().strip()
 
