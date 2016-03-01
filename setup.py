@@ -4,25 +4,20 @@
 """
 
 from setuptools import setup, find_packages
+import os
 
+version_file = os.path.join('nispy', 'version.txt')
+with open(version_file) as vf:
+    __version__ = vf.read().strip()
 
 setup(
     name='seisobs',
-
-    version = '0.0.2',
-
+    version = __version__,
     description = 'A package for converting s-files to obspy catalog objects',
-    
-    # The project's main homepage.
     url = 'https://github.com/d-chambers/seisobs',
-
-    # Author details
     author = 'Derrick Chambers',
     author_email = 'djachambeador@gmail.com',
-
-    # Liscense
     license = 'MIT',
-
     classifiers = [
 
         'Development Status :: 3 - Alpha',
@@ -31,9 +26,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2.7',
     ],
-
-    # What does your project relate to?
     keywords = 'seismology',
-    packages = find_packages(exclude=['contrib', 'docs', 'tests*']),
-    install_requires = ['pytest', 'obspy', 'pandas >= 0.17.0', 'ipdb']
+    packages = find_packages(exclude=['contrib', 'docs', 'Tests*']),
+    install_requires = ['pytest', 'obspy >= 1.0.0', 'pandas >= 0.17.0']
 )
