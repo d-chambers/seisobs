@@ -14,7 +14,7 @@ import seisobs
 import os
 # get version
 pkg_dir = os.path.dirname(seisobs.__file__)
-version_fil = os.path.join(pkg_dir, 'version.txt')
+version_fil = os.path.join(pkg_dir, 'version.py')
 with open(version_fil) as verfi:
     __version__ = verfi.read().strip()
 
