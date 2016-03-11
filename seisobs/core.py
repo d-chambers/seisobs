@@ -222,7 +222,11 @@ class Seisob(object):
             utc = self._get_utc_from_sfile_name(sfile)
             sname = self._get_save_name(utc, ext, directory_struct, savedir)
             if skip_if_exists and os.path.exists(sname):
-                return
+                # If the sfile has been modified since the quakml still write
+                qml_modtime = os.path.getmtime(sname)
+                smodtime = os.path.getatime(sfile)
+                if qml_modtime > smodtime:
+                    return
             try:
                 sdf = self.load_sfile_into_df(sfile)
             except ValueError:
