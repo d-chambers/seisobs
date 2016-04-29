@@ -144,7 +144,7 @@ sline
 
 
 
-Seisobs.core.Seisob then does the heavy lifting of taking many of these series that contain data for each line type and tries to appropriate fill the catalog structure. There are still some bumps here, and seisobs doesn't support all the different types of comment lines yet, but the framework should be sufficient to expand the functionality. At this point I am looking for some people that might understand nordic and quakeML formats better than I do to help expand the functionality. 
+Seisobs.core.Seisob then does the heavy lifting of taking many of these series that contain data for each line type and tries to fill the catalog structure. There are still some bumps here, and seisobs doesn't support all the different types of comment lines yet. At this point I am looking for some people that might understand nordic and quakeML formats better than I do to help expand the functionality. 
 
 
 ## Gotchas
@@ -171,26 +171,6 @@ py.test test_seisobs.py
 ```
 
 It is that simple. 
-
-## Seisobs in obspy?
-
-I hope to submit a pull request to merge seisobs into the seisan module of obspy but there are several obstacles:
-
-1. Pep 8: I have a few lines that go past the limit of 79 chars. I prescribe to the "beyond pep8" ideas Raymond Hettinger presented in [his 2015 pycon talk](https://www.youtube.com/watch?v=wf-BqAjZb8M) but I am happy to wrap some lines to meet obspy line width limits.
-
-2. Doc Strings: I used the [google style doc string style](http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html) rather than the reST style because it looks better in [spyder](https://github.com/spyder-ide/spyder), the IDE  I use. These will need to be changed, but this shouldn't take too long.  
-
-3. I used the py.test framework rather than nose for all the automated tests. This is a bigger problem because I have never used nose (I am just getting my feet wet with py.test) so I may need some help with this one. 
-
-4. I used pandas extensively because the DataFrame and Series are very powerful and convenient containers. Pandas is not currently a required dependency of obspy so I would need to rewrite large chunks of the code to stick within current dependencies. I am not very excited about doing this but I may if I get some extra time.  
-
-5. I am not sure if it is Python 3 compatible.  This should be easy to check but I haven’t done so yet. 
-
-6. Seisobs needs more general testing on a larger number of s-files than just those included in the test directory of seisan. 
-
-## Catalog object to seisan?
-
-I think that seisobs should be able to write s-files (nordic) but I don't have much time to code it right now.
 
 
 
