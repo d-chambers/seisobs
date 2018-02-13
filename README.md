@@ -1,4 +1,6 @@
 
+NOTE: Obspy now supports reading the nordic format, therefore this package will no longer be supported.
+
 # Intro
 Seisobs is a simple python package to read seisan s-files, in [Nordic format](http://seis.geus.net/software/seisan/seisan.pdf#page=421) into obspy catalog objects. Once an Obspy Catalog is instantiated it can be saved to several useful formats, including quakeML. See the [obspy docs](https://docs.obspy.org/packages/autogen/obspy.core.event.html) for more details.
 
